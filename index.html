@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Lanzado</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -645,6 +646,252 @@
             margin-bottom: 0.5rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
+        }
+
+        /* ============ TABLET (768px+) ============ */
+        @media (min-width: 768px) {
+            .container {
+                max-width: 720px;
+                padding-bottom: 100px;
+            }
+
+            header {
+                padding: 2rem 1.5rem 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .tabs {
+                position: fixed;
+                bottom: 20px;
+                left: 50%;
+                right: auto;
+                transform: translateX(-50%);
+                width: auto;
+                max-width: none;
+                border-radius: 50px;
+                border: 1px solid #333;
+                padding: 0.4rem 0.6rem;
+                gap: 0.25rem;
+                background: rgba(10, 10, 10, 0.95);
+                backdrop-filter: blur(10px);
+                box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+            }
+
+            .tab {
+                padding: 0.6rem 1rem;
+                font-size: 0;
+                border-radius: 40px;
+                flex: none;
+            }
+
+            .tab svg {
+                width: 22px;
+                height: 22px;
+            }
+
+            .tab.active {
+                background: #222;
+            }
+
+            .tab-content {
+                padding: 1.5rem;
+            }
+
+            #leaflet-map {
+                height: calc(100vh - 140px);
+                border-radius: 16px;
+                margin: 0 1.5rem;
+            }
+
+            .map-legend {
+                bottom: 100px;
+                font-size: 0.8rem;
+                padding: 0.75rem 1.5rem;
+                gap: 1.5rem;
+            }
+
+            .section {
+                margin-bottom: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 0.8rem;
+                margin-bottom: 1.25rem;
+            }
+
+            /* Grid layout for todo items */
+            .section > .item,
+            .section > .food-item {
+                display: inline-block;
+                width: calc(50% - 0.5rem);
+                vertical-align: top;
+                margin-right: 0.75rem;
+            }
+
+            .section > .item:nth-child(2n + 1),
+            .section > .food-item:nth-child(2n + 1) {
+                margin-right: 0.75rem;
+            }
+
+            .section > .item:nth-child(2n),
+            .section > .food-item:nth-child(2n) {
+                margin-right: 0;
+            }
+
+            .item, .food-item {
+                padding: 1.5rem;
+            }
+
+            .item-icon, .popup-icon {
+                width: 52px;
+                height: 52px;
+                border-radius: 14px;
+            }
+
+            .item-icon svg, .popup-icon svg {
+                width: 26px;
+                height: 26px;
+            }
+
+            .item-name, .popup-name, .food-name {
+                font-size: 1.1rem;
+            }
+
+            .item-desc, .popup-desc, .food-desc {
+                font-size: 0.9rem;
+            }
+
+            .trad-section {
+                padding: 1.25rem 1.5rem;
+            }
+
+            .phrase-es {
+                font-size: 1.05rem;
+            }
+
+            .phrase-fr {
+                font-size: 0.9rem;
+            }
+
+            .leaflet-popup-content {
+                max-width: 400px;
+            }
+        }
+
+        /* ============ DESKTOP (1024px+) ============ */
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 960px;
+                padding-bottom: 100px;
+            }
+
+            header {
+                padding: 2.5rem 2rem 1.5rem;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .tabs {
+                padding: 0.5rem 0.75rem;
+            }
+
+            .tab {
+                padding: 0.7rem 1.2rem;
+            }
+
+            .tab svg {
+                width: 24px;
+                height: 24px;
+            }
+
+            .tab-content {
+                padding: 2rem;
+            }
+
+            #leaflet-map {
+                height: calc(100vh - 160px);
+                margin: 0 2rem;
+            }
+
+            .map-legend {
+                bottom: 110px;
+            }
+
+            /* 3 columns for items */
+            .section > .item,
+            .section > .food-item {
+                width: calc(33.333% - 0.67rem);
+                margin-right: 1rem;
+            }
+
+            .section > .item:nth-child(2n),
+            .section > .food-item:nth-child(2n) {
+                margin-right: 1rem;
+            }
+
+            .section > .item:nth-child(3n),
+            .section > .food-item:nth-child(3n) {
+                margin-right: 0;
+            }
+
+            .trad-section {
+                display: inline-block;
+                width: calc(50% - 0.5rem);
+                vertical-align: top;
+                margin-right: 1rem;
+            }
+
+            .trad-section:nth-child(2n) {
+                margin-right: 0;
+            }
+        }
+
+        /* ============ LARGE DESKTOP (1280px+) ============ */
+        @media (min-width: 1280px) {
+            .container {
+                max-width: 1200px;
+            }
+
+            h1 {
+                font-size: 2.4rem;
+            }
+
+            #leaflet-map {
+                height: calc(100vh - 180px);
+            }
+
+            /* 4 columns for items */
+            .section > .item,
+            .section > .food-item {
+                width: calc(25% - 0.75rem);
+            }
+
+            .section > .item:nth-child(3n),
+            .section > .food-item:nth-child(3n) {
+                margin-right: 1rem;
+            }
+
+            .section > .item:nth-child(4n),
+            .section > .food-item:nth-child(4n) {
+                margin-right: 0;
+            }
+
+            .trad-section {
+                width: calc(33.333% - 0.67rem);
+            }
+
+            .trad-section:nth-child(2n) {
+                margin-right: 1rem;
+            }
+
+            .trad-section:nth-child(3n) {
+                margin-right: 0;
+            }
         }
     </style>
 </head>

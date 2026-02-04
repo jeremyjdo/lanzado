@@ -715,34 +715,37 @@
 
             .section {
                 margin-bottom: 2.5rem;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
             }
 
             .section-title {
                 font-size: 0.8rem;
-                margin-bottom: 1.25rem;
-            }
-
-            /* Grid layout for todo items */
-            .section > .item,
-            .section > .food-item {
-                display: inline-block;
-                width: calc(50% - 0.5rem);
-                vertical-align: top;
-                margin-right: 0.75rem;
-            }
-
-            .section > .item:nth-child(2n + 1),
-            .section > .food-item:nth-child(2n + 1) {
-                margin-right: 0.75rem;
-            }
-
-            .section > .item:nth-child(2n),
-            .section > .food-item:nth-child(2n) {
-                margin-right: 0;
+                margin-bottom: 0;
+                grid-column: 1 / -1;
             }
 
             .item, .food-item {
                 padding: 1.5rem;
+                margin-bottom: 0;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .item-header {
+                flex: 1;
+            }
+
+            /* Trad sections grid */
+            #trad {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .trad-section {
+                margin-bottom: 0;
             }
 
             .item-icon, .popup-icon {
@@ -764,10 +767,6 @@
                 font-size: 0.9rem;
             }
 
-            .trad-section {
-                padding: 1.25rem 1.5rem;
-            }
-
             .phrase-es {
                 font-size: 1.05rem;
             }
@@ -784,7 +783,7 @@
         /* ============ DESKTOP (1024px+) ============ */
         @media (min-width: 1024px) {
             .container {
-                max-width: 960px;
+                max-width: 1100px;
                 padding-bottom: 100px;
             }
 
@@ -823,38 +822,22 @@
             }
 
             /* 3 columns for items */
-            .section > .item,
-            .section > .food-item {
-                width: calc(33.333% - 0.67rem);
-                margin-right: 1rem;
+            .section {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.25rem;
             }
 
-            .section > .item:nth-child(2n),
-            .section > .food-item:nth-child(2n) {
-                margin-right: 1rem;
-            }
-
-            .section > .item:nth-child(3n),
-            .section > .food-item:nth-child(3n) {
-                margin-right: 0;
-            }
-
-            .trad-section {
-                display: inline-block;
-                width: calc(50% - 0.5rem);
-                vertical-align: top;
-                margin-right: 1rem;
-            }
-
-            .trad-section:nth-child(2n) {
-                margin-right: 0;
+            /* 3 columns for trad */
+            #trad {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.25rem;
             }
         }
 
-        /* ============ LARGE DESKTOP (1280px+) ============ */
-        @media (min-width: 1280px) {
+        /* ============ LARGE DESKTOP (1440px+) ============ */
+        @media (min-width: 1440px) {
             .container {
-                max-width: 1200px;
+                max-width: 1400px;
             }
 
             h1 {
@@ -866,31 +849,15 @@
             }
 
             /* 4 columns for items */
-            .section > .item,
-            .section > .food-item {
-                width: calc(25% - 0.75rem);
+            .section {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1.5rem;
             }
 
-            .section > .item:nth-child(3n),
-            .section > .food-item:nth-child(3n) {
-                margin-right: 1rem;
-            }
-
-            .section > .item:nth-child(4n),
-            .section > .food-item:nth-child(4n) {
-                margin-right: 0;
-            }
-
-            .trad-section {
-                width: calc(33.333% - 0.67rem);
-            }
-
-            .trad-section:nth-child(2n) {
-                margin-right: 1rem;
-            }
-
-            .trad-section:nth-child(3n) {
-                margin-right: 0;
+            /* 4 columns for trad */
+            #trad {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1.5rem;
             }
         }
     </style>
